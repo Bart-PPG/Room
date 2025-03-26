@@ -6,7 +6,7 @@ import androidx.room.Ignore;
 import androidx.room.PrimaryKey;
 
 @Entity(tableName = "pracownicy")
-public class Pracownicy {
+public class Pracownik {
     @PrimaryKey(autoGenerate = true)
     @ColumnInfo(name = "id_pracownika")
     private int id;
@@ -19,10 +19,10 @@ public class Pracownicy {
     private String stanowisko;
 
     @Ignore
-    public Pracownicy() {
+    public Pracownik() {
     }
 
-    public Pracownicy(int id, String imie, String nazwisko, String jezykOjczysty, String jezykObcyKomunikatywny, Double wynagrodzenie, String stanowisko) {
+    public Pracownik(int id, String imie, String nazwisko, String jezykOjczysty, String jezykObcyKomunikatywny, Double wynagrodzenie, String stanowisko) {
 
         this.id = 0;
         this.imie = imie;

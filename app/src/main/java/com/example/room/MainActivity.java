@@ -14,3 +14,4 @@ public class MainActivity extends AppCompatActivity {
 }
 //1. klasa opisujaca pojedynce rekordy / obiekty
 //2.Do klasy adnotacje bazo danowe
+//3.Data acces object DAO
