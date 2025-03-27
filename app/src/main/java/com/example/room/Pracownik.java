@@ -19,7 +19,7 @@ public class Pracownik {
     private String stanowisko;
 
     @Ignore
-    public Pracownik() {
+    public Pracownik(String jas, String nowak, String polski, String s, int i, String programista) {
     }
 
     public Pracownik(int id, String imie, String nazwisko, String jezykOjczysty, String jezykObcyKomunikatywny, Double wynagrodzenie, String stanowisko) {
