@@ -1,3 +1,11 @@
 <resources>
     <string name="app_name">Room</string>
+    <string-array name="stanowiska">
+        <item>programista junior</item>
+        <item>programista middle</item>
+        <item>programista senior</item>
+        <item>tester manual</item>
+        <item>tester senior</item>
+        <item>scrum master</item>
+    </string-array>
 </resources>
