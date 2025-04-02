@@ -50,7 +50,7 @@ public class MainActivity extends AppCompatActivity {
                     new Runnable() {
                         @Override
                         public void run() {
-                            dataBasePracownicy.getDaoPracownicy().DodajPracownika(new Pracownik("Jas","Nowak","polski","polski",14000,"Programista"));
+                            dataBasePracownicy.getDaoPracownicy().DodajPracownika(new Pracownik("Jas","Nowak","polski","polski",14000.0,"Programista"));
                             handler.post(new Runnable() {
                                 @Override
                                 public void run() {

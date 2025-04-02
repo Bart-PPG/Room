@@ -19,10 +19,10 @@ public class Pracownik {
     private String stanowisko;
 
     @Ignore
-    public Pracownik(String jas, String nowak, String polski, String s, int i, String programista) {
+    public Pracownik() {
     }
 
-    public Pracownik(int id, String imie, String nazwisko, String jezykOjczysty, String jezykObcyKomunikatywny, Double wynagrodzenie, String stanowisko) {
+    public Pracownik(String imie, String nazwisko, String jezykOjczysty, String jezykObcyKomunikatywny, Double wynagrodzenie, String stanowisko) {
 
         this.id = 0;
         this.imie = imie;
