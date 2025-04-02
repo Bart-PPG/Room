@@ -10,6 +10,7 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
@@ -77,6 +78,35 @@ public class MainActivity extends AppCompatActivity {
                 }
         );
         wypiszPracownikow();
+        listView.setOnItemClickListener(
+                new AdapterView.OnItemClickListener() {
+                    @Override
+                    public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                        usunPracownika(pracownicy.get(i));
+                    }
+                }
+        );
+    }
+    private void usunPracownika(Pracownik pracownik){
+        ExecutorService executorService = Executors.newSingleThreadExecutor();
+        Handler handler = new Handler(Looper.getMainLooper());
+        executorService.execute(
+                new Runnable() {
+                    @Override
+                    public void run() {
+                        dataBasePracownicy.getDaoPracownicy().usunPracownika(pracownik);
+                        pracownicy.remove(pracownik);
+                        handler.post(
+                                new Runnable() {
+                                    @Override
+                                    public void run() {
+                                        arrayAdapter.notifyDataSetChanged();
+                                    }
+                                }
+                        );
+                    }
+                }
+        );
     }
 
 
@@ -117,6 +147,8 @@ public class MainActivity extends AppCompatActivity {
                             handler.post(new Runnable() {
                                 @Override
                                 public void run() {
+                                    pracownicy.add(pracownik);
+                                    arrayAdapter.notifyDataSetChanged();
                                     Toast.makeText(MainActivity.this, "dodano do bazy", Toast.LENGTH_SHORT).show();
                                 }
                             });
